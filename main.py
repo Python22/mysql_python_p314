@@ -1,6 +1,9 @@
 import pymysql
 import tkinter
 from sql_queries.add_queries import *
+from sql_queries.get_queries import *
+from sql_queries.delete_queries import *
+from sql_queries.update_queries import *
 
 
 try:
@@ -26,7 +29,8 @@ try:
                         values = get_groups_from_console()
                         add_group(cursor, connection, values)
                     case "3":
-                        pass
+                        result = get_all_data(cursor, "students")
+                        print(*result, sep="\n")
                     case "4":
                         pass
                     case "0":
