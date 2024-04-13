@@ -1,0 +1,118 @@
+запросы для sql server
+(transact SQL)
+
+--SELECT * FROM tablename
+
+--CREATE DATABASE Testp314_prep			создание бд
+--DROP DATABASE newnew			удаление бд
+
+--USE Testp314_prep					переключение на эту бд
+
+
+-- CTRL + K затем CTRL + C - закомментировать
+-- CTRL + K затем CTRL + U - раскомментировать
+--создание таблицы
+--CREATE TABLE person(
+--	id INT PRIMARY KEY,
+--	firstname NVARCHAR(50),
+--	lastname NVARCHAR(50),
+--	age INT
+--)
+
+
+
+--вставка данных
+--INSERT INTO person (id, firstname, lastname, age)
+--VALUES
+--(2, 'Vasya', 'Petin', 25),
+--(3, 'Petya', 'Petin', 30),
+--(4, 'Max', 'Maxin', 15),
+--(5, 'Max', 'Petin', 55),
+--(6, 'Vasya', 'Petin', 60)
+
+
+--SELECT * FROM person
+--WHERE age < 30
+
+
+
+--вернуть только уникальные значения возрастов
+--SELECT age FROM person
+--WHERE age < 30
+--GROUP BY age
+
+
+
+
+
+
+
+--USE Testp314_prep
+--INSERT INTO person (id, firstname, lastname, age)
+--VALUES
+--(13, N'Вася', N'Пупкин', 25)
+
+
+--SELECT * FROM person
+
+
+
+
+
+
+
+
+
+--Задание 4
+--CREATE DATABASE Students_p314_prep
+--USE Students_p314_prep
+
+
+--CREATE TABLE students_grades (
+--	id INT PRIMARY KEY IDENTITY,
+--	firstname NVARCHAR(50),
+--	lasstname NVARCHAR(50),
+--	fathername NVARCHAR(50),
+--	country NVARCHAR(50),
+--	birthday DATE,
+--	email NVARCHAR(50),
+--	phone NVARCHAR(50),
+--	group_name NVARCHAR(50),
+--	average_grade FLOAT,
+--	worse_grade_module NVARCHAR(50),
+--	best_grade_module NVARCHAR(50)
+--)
+
+
+
+--отредактировать тип данных в колонке в указанной таблице
+--ALTER TABLE students_grades ALTER COLUMN country date
+
+
+
+
+--USE Students_p314_prep
+--■ Отображение всей информации из таблицы со студентами и оценками;
+--SELECT * from students_grades
+
+--■ Отображение ФИО всех студентов;
+--SELECT firstname, lasstname, fathername from students_grades
+
+--■ Отображение всех средних оценок;
+--SELECT average_grade from students_grades
+--GROUP BY average_grade
+
+
+
+
+
+--■ Показать ФИО всех студентов со средней оценкой, больше, чем указанная;
+--SELECT firstname, lasstname, fathername FROM students_grades
+--WHERE average_grade > 10
+
+
+
+--Показать страны студентов. Названия стран должны быть уникальными;
+--SELECT DISTINCT country FROM students_grades
+
+
