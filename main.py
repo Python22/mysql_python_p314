@@ -30,7 +30,8 @@ try:
                         add_group(cursor, connection, values)
                     case "3":
                         result = get_all_data(cursor, "students")
-                        print(*result, sep="\n")
+                        for row in result:
+                            print(*row)
                     case "4":
                         pass
                     case "0":
