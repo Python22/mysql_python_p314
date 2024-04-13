@@ -11,18 +11,28 @@ try:
             # for db in cursor:
             #     print(*db)
             # sql_queries.add_student(cursor, connection)
-            print("1. Добавить студента.")
-            print("2. Добавить группу.")
-            user_choice = input("Ваш выбор: ")
-            match user_choice:
-                case "1":
-                    values = sql_queries.get_students_from_console()
-                    sql_queries.add_student(cursor, connection, values)
-                case "2":
-                    values = sql_queries.get_groups_from_console()
-                    sql_queries.add_group(cursor, connection, values)
-                case _:
-                    print("Неизвестная команда.")
+            while True:
+                print("1. Добавить студента.")
+                print("2. Добавить группу.")
+                print("3. Вывести всех студентов.")
+                print("4. Вывести все группы.")
+                print("0. Выход.")
+                user_choice = input("Ваш выбор: ")
+                match user_choice:
+                    case "1":
+                        values = sql_queries.get_students_from_console()
+                        sql_queries.add_student(cursor, connection, values)
+                    case "2":
+                        values = sql_queries.get_groups_from_console()
+                        sql_queries.add_group(cursor, connection, values)
+                    case "3":
+                        pass
+                    case "4":
+                        pass
+                    case "0":
+                        break           # quit()
+                    case _:
+                        print("Неизвестная команда.")
 
 
 except pymysql.Error as e:
