@@ -19,7 +19,8 @@ try:
                     values = sql_queries.get_students_from_console()
                     sql_queries.add_student(cursor, connection, values)
                 case "2":
-                    pass
+                    values = sql_queries.get_groups_from_console()
+                    sql_queries.add_group(cursor, connection, values)
                 case _:
                     print("Неизвестная команда.")
 
