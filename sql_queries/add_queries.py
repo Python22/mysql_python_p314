@@ -1,6 +1,3 @@
-import pymysql
-
-
 def get_students_from_console():
     return input("Имя: "), input("Фамилия: "), input("День рождения(2005-12-31): ")
 

@@ -1,6 +1,6 @@
 import pymysql
-import sql_queries
 import tkinter
+from sql_queries.add_queries import *
 
 
 try:
@@ -20,11 +20,11 @@ try:
                 user_choice = input("Ваш выбор: ")
                 match user_choice:
                     case "1":
-                        values = sql_queries.get_students_from_console()
-                        sql_queries.add_student(cursor, connection, values)
+                        values = get_students_from_console()
+                        add_student(cursor, connection, values)
                     case "2":
-                        values = sql_queries.get_groups_from_console()
-                        sql_queries.add_group(cursor, connection, values)
+                        values = get_groups_from_console()
+                        add_group(cursor, connection, values)
                     case "3":
                         pass
                     case "4":
